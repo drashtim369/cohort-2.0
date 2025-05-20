@@ -178,6 +178,21 @@ function counter() {
 }
 counter();
 
+
+
+//Calculate time taken between setTimeout call and inner func acc running
+function greet() {
+  let endTime = new Date();
+  let timeTaken = endTime - startTime; // in milliseconds
+  console.log("Hello!");
+  console.log("Time difference between setTimeout and actual function running: " + timeTaken + "ms");
+}
+
+let startTime = new Date();
+setTimeout(greet, 2000);
+
+
+
 // Create a terminal clock
 console.log("12) Create a terminal clock [HH:MM:SS]=> ");
 setInterval(function() {
