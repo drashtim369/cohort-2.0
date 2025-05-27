@@ -181,12 +181,23 @@ counter();
 
 
 //Calculate time taken between setTimeout call and inner func acc running
-function greet() {
-  let endTime = new Date();
-  let timeTaken = endTime - startTime; // in milliseconds
-  console.log("Hello!");
-  console.log("Time difference between setTimeout and actual function running: " + timeTaken + "ms");
+let beforeT = new Date(); // ✅ Time before setTimeout
+let bT = beforeT.getTime(); // use getTime() instead of getMilliseconds()
+
+function sum() {
+  let afterT = new Date();
+  let aT = afterT.getTime();
+  console.log("Delay (ms):", aT - bT);
+
+  let ans = 0;
+  for (let i = 0; i < 100000; i++) {
+    ans += i;
+  }
+  console.log(ans);
 }
+
+setTimeout(sum, 1000);
+
 
 let startTime = new Date();
 setTimeout(greet, 2000);

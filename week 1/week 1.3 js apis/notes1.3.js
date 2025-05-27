@@ -19,11 +19,11 @@ console.log("Start index of '" + target + "' is " + str.indexOf(target)); // 8
 // 3) lastIndexOf
 let str2 = "Drashti Madhiwala Madhiwala Madhiwala";
 console.log("3) lastIndexOf:");
-console.log("Start index of last repetition of '" + target + "' is " + str2.lastIndexOf(target)); // 27
+console.log("Start index of last repetition of '" + target + "' is " + str2.lastIndexOf(target)); // 28
 
 // 4) slice
 console.log("4) Slice:");
-console.log("Slice between 0 - 7 (7 not included): " + str.slice(0, 7)); // Drashti
+console.log("Slice between 0 - 7 (7 not included)): " + str.slice(0, 7)); // Drashti
 
 // 5) substr
 console.log("5) Substr (Slice's predecessor):");
@@ -91,7 +91,10 @@ let allFruits = arr.concat(tropical);
 console.log("concat(['mango', 'pineapple']):", allFruits); // ['apple', 'blueberry', 'blackberry', 'cherry', 'mango', 'pineapple']
 
 console.log("forEach print:");
-arr.forEach((item, index) => console.log(`${index}: ${item}`));
+function printFruit(arr) {
+    console.log(arr);
+}
+arr.forEach(printFruit);
 // 0: apple
 // 1: blueberry
 // 2: blackberry
