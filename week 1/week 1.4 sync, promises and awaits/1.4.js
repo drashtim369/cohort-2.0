@@ -1,3 +1,7 @@
+
+
+
+
 //Sync -> One after one
 //Async -> Multiple tasks together using context switching
 //!!!!!!!// 
@@ -80,7 +84,9 @@ function DrashtiReadsFile() {
     return p;
 }
 async function main() {
-    const x = await p;
+    const x = await DrashtiReadsFile();
     console.log(x);
 }
 main();
+
+//Any function that wants to use await, needs to have async in front of it.
